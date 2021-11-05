@@ -9,3 +9,21 @@ dapr-app-id: api
 GET {{host}}/hello?name=liulixiang
 Accept: application/json
 dapr-app-id: api
+
+### Save state
+POST {{host}}/v1.0/state/statestore
+Accept: application/json
+Content-Type: application/json
+dapr-app-id: api
+
+[
+  {
+    "key": "name",
+    "value": "Bruce Wayne"
+  }
+]
+
+### Get State
+GET {{host}}/v1.0/state/statestore/name
+Accept: application/json
+dapr-app-id: api
